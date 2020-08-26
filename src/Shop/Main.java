@@ -1,7 +1,7 @@
 package Shop;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         System.out.println("Старт");
         Shop shop=new Shop();
 
