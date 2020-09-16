@@ -16,20 +16,13 @@ public class Main {
         //            System.out.println(field.isAnnotationPresent(Scale.class));
         for (Field field : fields)
             if (field.isAnnotationPresent(Scale.class)) {
-                try {
+
                     try {
                         System.out.println(field.getName() + " = " +
                         reflTest.getClass().getMethod("get"+field.getName(),Integer.class).invoke(reflTest,field.getAnnotation(Scale.class).size()));
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (InvocationTargetException e) {
+                    } catch (IllegalAccessException|InvocationTargetException|NoSuchMethodException e) {
                         e.printStackTrace();
                     }
-                } catch (NoSuchMethodException e) {
-                    e.printStackTrace();
-                }
             }
-
-
     }
 }
